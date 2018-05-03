@@ -1120,10 +1120,7 @@
           this.options.data[subunit] = defaults(subunitData, this.options.data[subunit] || {});
           var geo = this.svg.select('.' + subunit).attr('data-info', JSON.stringify(this.options.data[subunit]));
         }
-        svg
-          .selectAll('.' + subunit)
-          .transition()
-            .style('fill', color);
+        d3.selectAll("svg > *").selectAll('.' + subunit).transition().style('fill', color);
       }
     }
   };
